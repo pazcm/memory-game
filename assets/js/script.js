@@ -5,21 +5,25 @@ var board = document.createElement('div');
 var startButton = document.getElementById('start');
 var displayGame = game.style.display;
 
+var allCards = cards.concat(cards);
+
+
 board.setAttribute('id', 'board');
 board.setAttribute('class', 'box board');
 game.insertBefore(board, game.children[3]);
 
-cards.forEach(item => {
+allCards.forEach(item => {
   var card = document.createElement('div');
   card.classList.add('card');
   card.style.border = "thick solid blue";
   board.appendChild(card);
 });
 
+
 startButton.onclick = function(){
     game.style.display ='grid';
     startButton.remove();
     [].forEach.call( document.getElementsByClassName( 'card' ), function ( card, i ) {
-        card.textContent = cards[i];
+        card.textContent = allCards[i];
     });
 }
