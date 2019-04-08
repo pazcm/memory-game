@@ -34,5 +34,40 @@ startButton.onclick = function(){
 }
 
 
-// click play --> Show board (cards flip over) + start count down
-// after 5'' show cards back over + start time for playing 50''
+// select two cards and compare
+
+var count = 0;
+var click1 = '';
+var click2 = '';
+
+
+board.addEventListener('click', function(s) {
+    var pick = s.target
+
+    // get div content
+    pick.getElementsByClassName('card').textContent;
+    console.log(pick);
+
+    if (pick.classList === 'card') {
+        return
+    }
+
+    if (count < 2) {
+    count++
+        if (count === 1) {
+            click1 = pick
+            // console.log(select1)
+            pick.classList.add ('select')
+        } else {
+            click2 = pick
+            pick.classList.add ('select')
+        }
+
+        if (click1 !== '' && click2 !== '') {
+          // if the first choice matches the second -> match
+          if (click1 === click2) {
+            // call match function
+          }
+        }
+        }
+    })
