@@ -56,7 +56,7 @@ board.addEventListener('click', function(s) {
     count++
         if (count === 1) {
             click1 = pick
-            // console.log(select1)
+            // console.log(click1)
             pick.classList.add ('select')
         } else {
             click2 = pick
@@ -64,10 +64,18 @@ board.addEventListener('click', function(s) {
         }
 
         if (click1 !== '' && click2 !== '') {
-          // if the first choice matches the second -> match
-          if (click1 === click2) {
-            // call match function
+          // if the first choice matches the second -> call match function
+          if (click1.textContent === click2.textContent) {
+            match()
           }
         }
-        }
-    })
+    }
+})
+
+// match function
+const match = () => {
+  var select = document.querySelectorAll('.select')
+  select.forEach(card => {
+    card.classList.add('match')
+  })
+}
