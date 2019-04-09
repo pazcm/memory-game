@@ -59,6 +59,19 @@ body {
   grid-area: time;
 }
 
+.select {
+  background-color: #fff;
+}
+
+.match {
+  color: red;
+  background-color: black;
+}
+
+.deck {
+
+}
+
 
 /* Desktop screens */
 
